@@ -63,6 +63,7 @@ DHT::DHT(uint8_t pin, uint8_t type, uint8_t count) {
 void DHT::begin(uint8_t usec) {
   // set up the pins!
   pinMode(_pin, INPUT ); //_PULLUP);
+  //pinMode(_pin, INPUT_PULLUP );
   // Using this value makes sure that millis() - lastreadtime will be
   // >= MIN_INTERVAL right away. Note that this assignment wraps around,
   // but so will the subtraction.
@@ -252,6 +253,7 @@ bool DHT::read(bool force) {
   // Go into high impedence state to let pull-up raise data line level and
   // start the reading process.
   pinMode(_pin, INPUT ); //_PULLUP);
+  //pinMode(_pin, INPUT_PULLUP );
   delay(1);
 
   // First set data line low for a period according to sensor type
@@ -261,6 +263,7 @@ bool DHT::read(bool force) {
   case DHT22:
   case DHT21:
     delayMicroseconds(1100); // data sheet says "at least 1ms"
+    //delay(2);
     break;
   case DHT11:
   default:
@@ -272,6 +275,7 @@ bool DHT::read(bool force) {
   {
     // End the start signal by setting data line high for 40 microseconds.
     pinMode(_pin, INPUT ); //_PULLUP);
+    //pinMode(_pin, INPUT_PULLUP );
 
     // Delay a moment to let sensor pull data line low.
     delayMicroseconds(pullTime);

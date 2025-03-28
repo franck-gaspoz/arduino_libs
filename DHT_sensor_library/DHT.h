@@ -22,10 +22,10 @@
 
 /* Uncomment to enable printing out nice debug messages. */
 
-//#define DHT_DEBUG
-//#define DHT_DEBUG_ERR
-//#define DHT_TRACES_ON
-//#define DHT_TRACES_ERR_ON
+#define DHT_DEBUG
+#define DHT_DEBUG_ERR
+#define DHT_TRACES_ON
+#define DHT_TRACES_ERR_ON
 
 
 #define DEBUG_PRINTER                                                          \
